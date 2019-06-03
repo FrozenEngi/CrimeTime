@@ -19,7 +19,7 @@ team.SetUp(2, "Mafia", Color(255, 0, 0, 255))
 resource.AddFile("models/mafia/male_08.mdl")
 resource.AddFile("materials/models/humans/mafia")
 
---Initialization function for gamemode
+--Initialize: Called after the gamemode loads and starts
 function GM:Initialize()
    player_manager.AddValidModel( "MobBoss",			"models/humans/mafia/male_08.mdl" )
    player_manager.AddValidModel( "Mobster1",			"models/humans/mafia/male_02.mdl" )

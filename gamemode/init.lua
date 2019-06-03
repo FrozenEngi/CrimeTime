@@ -23,11 +23,10 @@ function GM:PlayerInitialSpawn(ply)
         ply:SetTeam(team.BestAutoJoinTeam())
     end
 
-    player_manager.SetPlayerClass(ply, table.Random(classes))
-
     local models = player_manager.AllValidModels()
     ply:SetModel(table.Random(models))
-    
+
+    player_manager.SetPlayerClass(ply, table.Random(classes))
 end
 
 --PlayerLoadout: Sets the player's loadout
@@ -36,12 +35,14 @@ function GM:PlayerLoadout(ply)
 
     if ply:Team() == 1 then
         ply:Give("weapon_pistol")
+        ply:Give("weapon_crowbar")
         --ply:SetModel("models/player/Eli.mdl")
 
     --Otherwise they are mafia.
 
     else
         ply:Give("weapon_smg1")
+        ply:Give("weapon_crowbar")
         --ply:SetModel(player_manager.TranslatePlayerModel("MobBoss"))
         --ply:SetModel("models/player/Eli.mdl")
     end
