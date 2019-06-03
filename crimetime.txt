@@ -1,0 +1,8 @@
+"crimetime"
+{
+	"base"		"base"
+	"title"		"Crime Time"
+	"maps"		"^gm_|^gmod_|^phys_"
+	"menusystem"	"1"
+
+}
