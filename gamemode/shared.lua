@@ -9,22 +9,53 @@ GM.Author = "Frozen Engi"
 GM.Email = "rjones898@gmail.com"
 GM.Website = "N/A"
 
+--Game states
+
+local WaitingForPlayers = {}
+WaitingForPlayers.Name = "Waiting For Players"
+WaitingForPlayers.Time = 0
+WaitingForPlayers.Index = 1
+
+local Voting = {}
+Voting.Name = "Voting Phase"
+Voting.Time = 120
+Voting.Index = 2
+
+local NightTime = {}
+NightTime.Name = "Night Time"
+NightTime.Time = 120
+NightTime.Index = 3
+
+local PostGame = {}
+PostGame.Name = "Post Game"
+PostGame.Time = 15
+PostGame.Index = 4
+
+GAME_STATES = {}
+
+GAME_STATES.WaitingForPlayers = WaitingForPlayers
+GAME_STATES[WaitingForPlayers.Index] = WaitingForPlayers
+
+GAME_STATES.Voting = Voting
+GAME_STATES[Voting.Index] = Voting
+
+GAME_STATES.NightTime = NightTime
+GAME_STATES[NightTime.Index] = NightTime
+
+GAME_STATES.PostGame = PostGame
+GAME_STATES[PostGame.Index] = PostGame
+
+--Teams
+
+TEAMS = {}
+TEAMS.TOWN = 1
+TEAMS.MAFIA = 2
+
 --Set up teams. Note: Color(red, green, blue, transparency)
 
 team.SetUp(1, "Town", Color(0, 0, 255, 255))
 team.SetUp(2, "Mafia", Color(255, 0, 0, 255))
 
---Tell the client to download these resources.
-
-resource.AddFile("models/mafia/male_08.mdl")
-resource.AddFile("materials/models/humans/mafia")
-
---Initialize: Called after the gamemode loads and starts
+--Called after the gamemode loads and starts
 function GM:Initialize()
-   player_manager.AddValidModel( "MobBoss",			"models/humans/mafia/male_08.mdl" )
-   player_manager.AddValidModel( "Mobster1",			"models/humans/mafia/male_02.mdl" )
-   player_manager.AddValidModel( "Mobster2",			"models/humans/mafia/male_04.mdl" )
-   player_manager.AddValidModel( "Mobster3",			"models/humans/mafia/male_06.mdl" )
-   player_manager.AddValidModel( "Mobster4",			"models/humans/mafia/male_07.mdl" )
-   player_manager.AddValidModel( "Mobster3",			"models/humans/mafia/male_09.mdl" )
 end
